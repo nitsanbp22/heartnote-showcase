@@ -10,7 +10,7 @@ Its purpose is to explain my contribution clearly without duplicating or republi
 - branding and interaction-design rationale
 - collaboration and ownership documentation
 - selected user-facing front-end examples
-- approved product screenshots when added
+- approved product screenshots
 - links to the live product and collaborative source repository where appropriate
 
 ## Intentionally excluded
@@ -44,3 +44,5 @@ They are provided for portfolio discussion and are not intended to form a deploy
 The live HeartNote product and its operational repository remain separate from this showcase.
 
 Changes made here do not deploy to or modify the production application.
+
+For publication checks, see [SECURITY.md](SECURITY.md).
