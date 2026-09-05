@@ -4,11 +4,36 @@
 
 [heartnote.co.il](https://heartnote.co.il)
 
-HeartNote is a Hebrew-first platform for creating animated and interactive digital greetings. Instead of sending a static card, users choose an experience, personalize it, preview it, and share it through a unique link.
+HeartNote is a Hebrew-first platform for creating animated and interactive digital greetings. Instead of sending a static card, users choose an experience, personalize it, preview it and share it through a unique link.
 
-The live product includes a gallery of interactive templates, a responsive editor, real-time preview, shareable greeting pages, account flows, accessibility support, and free and premium product tiers.
+The live product includes an interactive template gallery, responsive editors, real-time preview, shareable greeting pages, accessibility support and free and premium product tiers.
 
 > This repository is a curated portfolio case study of **my contribution to HeartNote**, not a clone of the full production codebase.
+
+## Product preview
+
+![HeartNote landing](assets/screenshots/heartnote-landing-desktop.png)
+
+### From discovery to creation
+
+![HeartNote gallery](assets/screenshots/heartnote-gallery-desktop.png)
+
+The gallery helps users choose an experience by occasion and interaction type, with search, categories and clear free or premium states.
+
+### Guided customization with live preview
+
+![HeartNote interactive editor](assets/screenshots/heartnote-quiz-editor-desktop.png)
+
+Different greeting types expose different controls, while the preview stays visible so the sender can understand the result while editing.
+
+### Responsive product experience
+
+<p align="center">
+  <img src="assets/screenshots/heartnote-mobile-landing.png" width="38%" alt="HeartNote mobile landing" />
+  <img src="assets/screenshots/heartnote-mobile-gallery.png" width="38%" alt="HeartNote mobile gallery" />
+</p>
+
+For the full visual flow, see [Product Walkthrough](docs/PRODUCT_WALKTHROUGH.md).
 
 ## My role
 
@@ -62,72 +87,44 @@ Recipient experiences the interaction
 
 This journey influenced most of the design decisions: the gallery must help people choose quickly, the editor must expose only relevant controls, and the final greeting must work without requiring the recipient to sign in or install anything.
 
-## Product experience
+## Product and UX decisions
 
-### 1. Gallery and discovery
+### Discovery before editing
 
-The gallery organizes different greeting experiences around occasions and interaction types. The goal is not to show a long list of technical templates, but to help users answer a simple question: **what kind of experience do I want to send?**
+The gallery is designed as a product discovery surface rather than a technical list of templates. Occasion categories, previews, search and pricing states help users choose an experience before they enter a creation flow.
 
-Product considerations included:
+### Guided creativity
 
-- occasion-based discovery
-- clear free and premium differentiation
-- visual previews before committing to a template
-- reducing decision fatigue
-- Hebrew-first hierarchy and category naming
+Each greeting exposes only the fields relevant to its interaction. The product gives users enough control to make the result personal without turning creation into a complex design task.
 
-### 2. Guided customization
+### Interaction before decoration
 
-Each greeting has different creative inputs, so a single generic form would create unnecessary complexity. The editor adapts to the selected template and keeps the customization experience focused on the fields that matter for that greeting.
-
-The live front end has separate mobile and desktop editor experiences rather than treating mobile as a scaled-down desktop layout.
-
-### 3. Interactive greeting concepts
-
-HeartNote currently supports a broad library of animated and interactive greeting types, including playful mechanics, event-specific scenes and reveal-based experiences.
+The templates are not only different visual themes. Many are different interaction concepts with their own pacing, reveal or playful mechanic.
 
 Examples include:
 
 - birthday candle interactions
-- wedding experiences
-- holiday greetings
-- decision and game-like interactions
+- quizzes and game-like experiences
+- wedding and holiday scenes
+- decision-based interactions
 - love coupons
 - reveal and surprise mechanics
 
-For me, this was one of the most interesting product-design challenges: translating an emotional idea into an interaction that is understandable, delightful and still simple enough to personalize.
+### Preview as part of the product
 
-### 4. Preview before sharing
+Preview is not treated as a final technical check. A sender needs confidence that text, animation and interaction all work together before sharing something personal.
 
-Preview is a core part of the product rather than a final technical step. A sender needs confidence that text, media, animation and interaction all work together before sharing something personal with another person.
+### Low-friction recipient experience
 
-### 5. Sharing without recipient friction
+The greeting opens through a shareable URL. The recipient does not need to install an app or create an account.
 
-The recipient experience is intentionally lightweight. The greeting opens through a shareable URL, with no app installation and no recipient account required.
+### Mobile as a primary surface
 
-This keeps the emotional moment separate from account creation or onboarding friction.
+Greeting creation and sharing are naturally mobile behaviors. The product therefore has separate mobile and desktop editor experiences instead of relying on simple scaling.
 
-## Product and UX decisions worth discussing
+### Hebrew-first RTL
 
-### Interaction before decoration
-
-The product is not built around decorative card layouts alone. Each template is treated as a small experience with its own interaction, pacing and reveal.
-
-### Guided creativity
-
-Users get enough control to make a greeting personal, while the template keeps the visual and interaction quality coherent.
-
-### Mobile is a primary creation surface
-
-Greeting creation is naturally social and mobile. Editor behavior, controls and preview therefore need to work as a real mobile workflow rather than a desktop interface squeezed into a smaller screen.
-
-### Hebrew-first instead of translated RTL
-
-The interface was designed for Hebrew from the beginning. RTL behavior, typography, text hierarchy and microcopy are part of the product experience, not a localization layer added later.
-
-### Emotional products still need clear system behavior
-
-A playful product can still create anxiety when users are about to send something personal. Clear preview states, predictable editing behavior, accessible controls and understandable premium boundaries are especially important in this context.
+RTL behavior, typography, microcopy and hierarchy were designed around Hebrew from the beginning rather than added as a localization layer later.
 
 ## Brand direction
 
@@ -136,16 +133,26 @@ HeartNote's brand needed to feel emotional and playful without becoming childish
 The visual language was designed around:
 
 - warmth and celebration
+- coral and navy brand accents
 - clean interface surfaces around expressive templates
 - approachable Hebrew typography
+- rounded forms and soft depth
 - playful motion and small moments of surprise
-- enough consistency for many different occasions and visual themes
+- enough consistency to support many different occasions
 
 Read more: [Design system & interaction principles](docs/DESIGN_SYSTEM_AND_INTERACTIONS.md)
 
+## Monetization and packaging
+
+![HeartNote pricing](assets/screenshots/heartnote-pricing-desktop.png)
+
+HeartNote combines a free path with paid creation options. The product challenge is to communicate what users gain by paying without hiding the core experience behind an immediate paywall.
+
+Pricing and packaging remain product decisions that can evolve as the live product generates more learning about user behavior and willingness to pay.
+
 ## Front-end contribution
 
-My technical contribution focused primarily on the user-facing experience and translating product and design decisions into working interfaces.
+My technical contribution focused primarily on translating product and design decisions into working user-facing interfaces.
 
 The production front end uses:
 
@@ -161,9 +168,9 @@ The production front end uses:
 Selected examples included in this showcase:
 
 - [`TemplateEditor.tsx`](code-samples/TemplateEditor.tsx) - separate mobile and desktop editor experiences
-- [`InteractiveShell.tsx`](code-samples/InteractiveShell.tsx) - a reusable RTL interaction shell for greeting experiences
+- [`InteractiveShell.tsx`](code-samples/InteractiveShell.tsx) - reusable RTL shell for interactive greeting experiences
 
-These files are included as focused examples of the front-end patterns relevant to my contribution. They are not a runnable copy of the production application.
+These files are focused examples relevant to my contribution. They are not a runnable copy of the production application.
 
 ## Product scope today
 
@@ -174,36 +181,35 @@ The live product includes:
 - template-specific customization
 - live preview
 - shareable greeting links
-- Hebrew-first RTL experience
-- responsive editor flows
+- responsive Hebrew-first RTL experience
 - free and premium product tiers
 - authentication and user profiles
 - accessibility support
 - dark mode
 
-The wider production system also includes backend, authentication, database, infrastructure, deployment and security work that was built collaboratively and is outside the primary scope of this portfolio case study.
+The wider production system also includes backend, database, authentication, infrastructure, deployment and security work built collaboratively. Those areas are outside the primary scope of this portfolio case study.
 
 ## Collaboration
 
-A major reason I wanted HeartNote represented separately in my portfolio is that it demonstrates a different kind of product work from my solo projects.
+HeartNote demonstrates a different kind of product work from my solo projects.
 
-It required:
+Working with a technical co-founder required:
 
-- aligning product and technical constraints
+- aligning product ideas with technical constraints
 - communicating visual and interaction intent clearly
-- deciding where a concept needed simplification
-- iterating on real implementation rather than static mockups
-- separating ownership while maintaining one coherent product
+- deciding where concepts needed simplification
+- iterating on a real implementation instead of static mockups
+- dividing ownership while maintaining one coherent product
 
-That collaboration is part of the case study, not something I want to hide behind a generic "full-stack project" label.
+I want that collaboration to be visible rather than presenting HeartNote as a generic "full-stack project".
 
 ## Tech context
 
-The production system currently uses Next.js, React, TypeScript, PostgreSQL, Prisma, Auth.js and AWS infrastructure. Those technologies matter because they shape product constraints and tradeoffs, but this showcase intentionally places **product decisions and user experience before infrastructure**.
+The production system currently uses Next.js, React, TypeScript, PostgreSQL, Prisma, Auth.js and AWS infrastructure. These technologies shape product constraints and tradeoffs, but this showcase intentionally places **product decisions and user experience before infrastructure**.
 
 ## Showcase scope
 
-This repository contains curated documentation and selected front-end examples only.
+This repository contains curated documentation, approved product screenshots and selected front-end examples only.
 
 It does not contain:
 
@@ -211,18 +217,19 @@ It does not contain:
 - AWS or deployment configuration
 - database configuration
 - authentication secrets
-- production data
+- production user data
 - the complete HeartNote source tree
 
-The full collaborative repository remains separate.
+The full collaborative production repository remains separate.
 
 See [SHOWCASE_SCOPE.md](SHOWCASE_SCOPE.md).
 
 ## Case study
 
-For the deeper product and UX rationale, see:
-
-[Product & UX Case Study](docs/PRODUCT_UX_CASE_STUDY.md)
+- [Product Walkthrough](docs/PRODUCT_WALKTHROUGH.md)
+- [Product & UX Case Study](docs/PRODUCT_UX_CASE_STUDY.md)
+- [Role & Collaboration](docs/ROLE_AND_COLLABORATION.md)
+- [Design System & Interaction Principles](docs/DESIGN_SYSTEM_AND_INTERACTIONS.md)
 
 ## Status
 
