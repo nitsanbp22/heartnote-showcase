@@ -1,0 +1,31 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+
+# Logs and local artifacts
+*.log
+.DS_Store
+.vscode/
+.idea/
+playwright-report/
+test-results/
+
+# Production and infrastructure material
+*.pem
+*.key
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+infra/
+
+# Internal tooling
+.agents/
